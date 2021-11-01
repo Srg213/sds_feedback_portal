@@ -1,0 +1,24 @@
+{% extends "view/layout.html" %}
+
+{% block body %}
+    <h2>Given Feedback</h2>
+
+       
+    <ul class = 'list-group'> 
+    
+    {%for feedback in feedbacks%}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+    <a href="{%url 'listing' listing.id %}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center ">
+        
+        <div class="flex-column">
+            <h4 class="mb-1" >{{feedback.title}}</h4><br>
+            <p>{{feedback.description}}</p>
+          
+          </div>
+        </div>
+    </a>
+    </li>
+    {% endfor %}
+    </ul>  
+
+{% endblock %}
