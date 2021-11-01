@@ -79,5 +79,8 @@ def create_feedback(request):
         return render(request, "view/create.html" )
 
 class FeedbackViewSet(viewsets.ModelViewSet):
-    queryset = Feedback.objects.all()
     serializer_class = FeedbackSerializer
+
+    def get_queryset(self):
+        queryset = Feedback.objects.all()
+        return queryset
